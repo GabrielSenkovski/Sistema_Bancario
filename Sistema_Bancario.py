@@ -1,10 +1,9 @@
-menu = """
-==============================   MENU  =============================
-                        [d] - Depositar
-                        [s] - Sacar
-                        [e] - Extrato
-                        [q] - Sair
-===================================================================
+menu = """  OPERAÇÕES
+                        [1] - Depositar
+                        [2] - Sacar
+                        [3] - Extrato
+                        [4] - Sair
+Digite a operação desejada abaixo:
 """
 
 saldo = 0
@@ -16,8 +15,8 @@ LIMITE_SAQUES = 3
 while True:
     opcao  = input(menu)
 
-    if opcao == "d":
-        valor = float(input("Informe o valor a ser depositado: "))
+    if opcao == "1":
+        valor = float(input(" valor do depósito: "))
 
         if valor > 0:
             print(f"Deposito realizado com sucesso! R$ {valor:.2f}\n")
@@ -25,9 +24,9 @@ while True:
             extrato += f"Depósito realizado: {valor:.2f}\n"
 
         else:
-            print("Operação falhou: O valor informado é inválido")
+            print("O valor informado é inválido")
     
-    elif opcao == "s":
+    elif opcao == "2":
 
         valor = float(input("Informe o valor de saque: "))
 
@@ -52,13 +51,13 @@ while True:
         else:
             print("Operação falhou: O valor informado é inválido.")
 
-    elif opcao == "e":
+    elif opcao == "3":
         print("============================== EXTRATO ==============================")
         print("Não foram realizadas movimentações na conta." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("=====================================================================")
 
-    elif opcao == "q":
+    elif opcao == "4":
         break
     
     else:
